@@ -47,7 +47,7 @@ module VideoConverter
             @metadata[:file_size_in_bytes] = response['content-length'].to_i
           end
         elsif is_local?
-          @metadata[:file_size_in_bytes] = File.size(input.gsub('\\', ''))
+          @metadata[:file_size_in_bytes] = File.size(input)
         end
         @metadata[:format] = File.extname(input).delete('.')
 
